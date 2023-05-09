@@ -11,6 +11,18 @@ while True:
         humidity=dhtDevice.humidity
         print("Temperature: {} C  humidity:{}%" .format(temp_c,humidity))
 
+        sum_temp+=temp_c
+        sum_hum+=humidity
+        counter+=1
+        if (counter==3){
+            avg_temp=sum_temp/3
+            avg_hum=sum_hum/3
+            print(avg_temp,avg_hum)
+            break
+
+        }
+
+
     except RuntimeError as error:
         print(error.args[0])
         time.sleep(2)
